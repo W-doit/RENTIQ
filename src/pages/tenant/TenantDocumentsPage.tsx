@@ -13,8 +13,10 @@ export function TenantDocumentsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-display text-2xl font-semibold mb-1">Documents</h1>
-        <p className="text-sm text-ink-muted">Lease, inspections, and water bills.</p>
+        <h1 className="font-display text-2xl font-extrabold mb-1">Documents</h1>
+        <p className="text-sm text-ink-muted">
+          For your home at 12 Oriental Parade — lease, inspections, water bills.
+        </p>
       </div>
       <div className="border border-hairline rounded-[var(--radius-card)] bg-surface divide-y divide-hairline">
         {docs.map((d) => (

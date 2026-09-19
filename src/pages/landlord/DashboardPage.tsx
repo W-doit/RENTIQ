@@ -45,7 +45,7 @@ export function DashboardPage() {
       <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-hairline bg-basalt text-basalt-ink px-5 py-4 flex gap-3 items-start">
         <Sparkles className="h-5 w-5 text-accent shrink-0 mt-0.5" />
         <div className="flex-1 min-w-0">
-          <p className="font-mono text-[10px] uppercase text-accent tracking-[0.14em] mb-1">Skip insight</p>
+          <p className="font-mono text-[10px] uppercase text-accent tracking-[0.14em] mb-1">Iris insight</p>
           <p className="text-sm text-basalt-ink/90 leading-relaxed">{insight}</p>
         </div>
         <Link to="/financials" className="text-sm text-accent font-medium shrink-0 hidden sm:inline-flex items-center gap-1 no-underline">

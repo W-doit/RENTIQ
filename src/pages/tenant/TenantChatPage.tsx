@@ -23,7 +23,7 @@ export function TenantChatPage() {
     {
       id: '1',
       role: 'assistant',
-      text: 'Kia ora — I’m Skip, available 24/7. Ask about rent, your lease, or how to fix something while we wait for a tradesperson.',
+      text: 'Kia ora — I’m Iris, available any hour. Ask about rent, your lease, or how to fix something while we wait for a tradesperson.',
     },
   ])
   const endRef = useRef<HTMLDivElement>(null)
@@ -52,8 +52,10 @@ export function TenantChatPage() {
   return (
     <div className="flex flex-col h-[calc(100dvh-11rem)]">
       <div className="mb-4">
-        <h1 className="font-display text-2xl font-semibold mb-1">Chat with Skip</h1>
-        <p className="text-sm text-ink-muted">24/7 AI help · mock responses</p>
+        <h1 className="font-display text-2xl font-extrabold mb-1">Chat with Iris</h1>
+        <p className="text-sm text-ink-muted">
+          AI help for your home — for your landlord, use Messages.
+        </p>
       </div>
       <div className="flex-1 overflow-y-auto space-y-3 mb-3 pr-1">
         {messages.map((m) => (

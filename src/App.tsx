@@ -5,6 +5,7 @@ import { LandlordShell } from './components/layout/LandlordShell'
 import { TenantShell } from './components/layout/TenantShell'
 import { LandingPage } from './pages/LandingPage'
 import { LoginPage } from './pages/LoginPage'
+import { TenantLoginPage } from './pages/TenantLoginPage'
 import { DashboardPage } from './pages/landlord/DashboardPage'
 import { PropertiesPage } from './pages/landlord/PropertiesPage'
 import { PropertyDetailLayout } from './pages/landlord/PropertyDetailLayout'
@@ -20,10 +21,12 @@ import { MaintenancePage } from './pages/landlord/MaintenancePage'
 import { CompliancePage } from './pages/landlord/CompliancePage'
 import { FinancialsPage } from './pages/landlord/FinancialsPage'
 import { SettingsPage } from './pages/landlord/SettingsPage'
+import { LandlordMessagesPage } from './pages/landlord/LandlordMessagesPage'
 import { TenantDashboardPage } from './pages/tenant/TenantDashboardPage'
 import { TenantMaintenancePage } from './pages/tenant/TenantMaintenancePage'
 import { TenantDocumentsPage } from './pages/tenant/TenantDocumentsPage'
 import { TenantChatPage } from './pages/tenant/TenantChatPage'
+import { TenantMessagesPage } from './pages/tenant/TenantMessagesPage'
 
 export default function App() {
   return (
@@ -31,8 +34,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage role="landlord" />} />
-          <Route path="/tenant/login" element={<LoginPage role="tenant" />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/tenant/login" element={<TenantLoginPage />} />
 
           <Route element={<ProtectedRoute role="landlord" />}>
             <Route element={<LandlordShell />}>
@@ -51,6 +54,7 @@ export default function App() {
               <Route path="/maintenance" element={<MaintenancePage />} />
               <Route path="/compliance" element={<CompliancePage />} />
               <Route path="/financials" element={<FinancialsPage />} />
+              <Route path="/messages" element={<LandlordMessagesPage />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
           </Route>
@@ -59,6 +63,7 @@ export default function App() {
             <Route element={<TenantShell />}>
               <Route path="/tenant/dashboard" element={<TenantDashboardPage />} />
               <Route path="/tenant/maintenance" element={<TenantMaintenancePage />} />
+              <Route path="/tenant/messages" element={<TenantMessagesPage />} />
               <Route path="/tenant/documents" element={<TenantDocumentsPage />} />
               <Route path="/tenant/chat" element={<TenantChatPage />} />
             </Route>

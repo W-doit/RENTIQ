@@ -9,9 +9,15 @@ AI property management PWA for New Zealand landlords and tenants.
 - Supabase (auth, DB, storage, realtime)
 - Lucide icons · Recharts · vite-plugin-pwa
 
-## Design
+## Design & voice
 
-**Porcelain & Steep** — cool porcelain surfaces, pāua blue primary (not green), basalt sidebar, kōwhai amber for “needs you.” Logo is a dual-read tea-cup / house mark with amber steam. Typography: Darker Grotesque + Hanken Grotesk + Martian Mono.
+**Porcelain & Steep** — cool porcelain, pāua blue (not green), basalt sidebar, amber for “needs you.” Tea-cup/house mark.
+
+**Positioning vs Keel:** Keel sells less admin. RentIQ sells nothing-slips-through — clarity, paper trail, and certainty you can check.
+
+**AI assistant:** Iris (not Skip — Keel’s name). Facts + one recommendation. Nothing sends without sign-off.
+
+**Hero:** Sit down. It’s handled.
 
 ## Quick start
 

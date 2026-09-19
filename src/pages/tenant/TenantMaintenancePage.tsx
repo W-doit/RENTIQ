@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Camera, Sparkles } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 import { Input, Label, Textarea } from '../../components/ui/Input'
-import { mockTickets } from '../../data/mock'
+import { mockTickets, tenantHome } from '../../data/mock'
 import { cn, formatDate } from '../../lib/utils'
 import type { Severity, TicketStatus } from '../../types/database'
 
@@ -14,7 +14,7 @@ export function TenantMaintenancePage() {
   const [photo, setPhoto] = useState('')
   const [estimate, setEstimate] = useState<Severity | null>(null)
   const [submitted, setSubmitted] = useState(false)
-  const mine = mockTickets.filter((t) => t.property_id === 'prop-1')
+  const mine = mockTickets.filter((t) => t.property_id === tenantHome.property.id)
 
   function estimateSeverity() {
     const text = `${title} ${description}`.toLowerCase()
@@ -39,8 +39,10 @@ export function TenantMaintenancePage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="font-display text-2xl font-semibold mb-1">Maintenance</h1>
-        <p className="text-sm text-ink-muted">Submit a request — Skip estimates severity.</p>
+        <h1 className="font-display text-2xl font-extrabold mb-1">Repairs</h1>
+        <p className="text-sm text-ink-muted">
+          For {tenantHome.property.address} only — Iris estimates severity.
+        </p>
       </div>
 
       <form

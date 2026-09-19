@@ -36,7 +36,7 @@ export function Metric({ value, prefix = '', suffix = '', className, animate = t
   }, [value, animate])
 
   return (
-    <span className={cn('metric text-metric text-ink tabular-nums', className)} data-currency>
+    <span className={cn('metric text-metric tabular-nums', className ?? 'text-ink')} data-currency>
       {prefix}
       {display.toLocaleString('en-NZ')}
       {suffix}

@@ -392,9 +392,9 @@ export const monthlyPnL = [
 ]
 
 export const aiInsights = [
-  'Elena at 4B Hawker is 3 days late — a firmer reminder is drafted and waiting for your OK.',
-  'Heating statement for 4B Hawker is due in 14 days. Skip can book the assessor this week.',
-  '19 Mt Victoria Rise has 3 strong applicants. Tane Williams scores 91 — worth reviewing first.',
+  "Rent's landed on all three occupied properties and nothing is overdue. Next on the horizon: the heating statement for 4B Hawker St is due in 14 days — say the word and I'll book the assessor.",
+  'Elena at 4B Hawker is 3 days late. A firmer reminder is drafted with the arrears figure and ready for your sign-off.',
+  '19 Mt Victoria Rise has 3 strong applicants. Tane Williams scores 91 with a clear Centrix check — worth reviewing first.',
 ]
 
 export const subscriptionTiers = [
@@ -423,9 +423,145 @@ export const subscriptionTiers = [
     features: [
       'Unlimited properties',
       'Everything in Gold',
-      'Priority Skip',
+      'Priority Iris',
       'DocuSign + bond lodgement',
       'Portfolio analytics',
     ],
+  },
+]
+
+/** Active demo tenancy — single home for the tenant portal */
+export const tenantHome = {
+  tenant: mockTenants[0],
+  property: mockProperties[0],
+  landlordName: 'Sam Aroha',
+  landlordEmail: 'sam@rentiq.nz',
+  nextRentDue: '2026-03-21',
+  paymentRef: 'RENT-ORIENTAL-12',
+}
+
+export type MessageSender = 'tenant' | 'landlord' | 'system'
+
+export interface ThreadMessage {
+  id: string
+  sender: MessageSender
+  senderName: string
+  body: string
+  sentAt: string
+  read: boolean
+}
+
+export interface MessageThread {
+  id: string
+  property_id: string
+  subject: string
+  participants: string
+  unread: number
+  updatedAt: string
+  messages: ThreadMessage[]
+}
+
+export const mockMessageThreads: MessageThread[] = [
+  {
+    id: 'thread-1',
+    property_id: 'prop-1',
+    subject: 'Dishwasher leak',
+    participants: 'You · Sam Aroha',
+    unread: 1,
+    updatedAt: '2026-03-17T08:12:00Z',
+    messages: [
+      {
+        id: 'm1',
+        sender: 'tenant',
+        senderName: 'You',
+        body: 'Kia ora Sam — dishwasher started leaking last night. I’ve shut the inlet tap. Not urgent but wanted you to know.',
+        sentAt: '2026-03-16T20:15:00Z',
+        read: true,
+      },
+      {
+        id: 'm2',
+        sender: 'system',
+        senderName: 'RentIQ',
+        body: 'Maintenance ticket opened · medium severity. Iris suggested Wellington Plumbing Co.',
+        sentAt: '2026-03-16T20:16:00Z',
+        read: true,
+      },
+      {
+        id: 'm3',
+        sender: 'landlord',
+        senderName: 'Sam Aroha',
+        body: 'Thanks Māhuta — plumber booked for Thursday morning. Quote capped at $280. Text me if it worsens.',
+        sentAt: '2026-03-17T08:12:00Z',
+        read: false,
+      },
+    ],
+  },
+  {
+    id: 'thread-2',
+    property_id: 'prop-1',
+    subject: 'Rent reminder',
+    participants: 'RentIQ · You',
+    unread: 0,
+    updatedAt: '2026-03-14T09:00:00Z',
+    messages: [
+      {
+        id: 'm4',
+        sender: 'system',
+        senderName: 'RentIQ',
+        body: 'Friendly heads-up: weekly rent of $680 is due Friday 21 Mar. Reference RENT-ORIENTAL-12.',
+        sentAt: '2026-03-14T09:00:00Z',
+        read: true,
+      },
+    ],
+  },
+  {
+    id: 'thread-3',
+    property_id: 'prop-1',
+    subject: 'Annual inspection',
+    participants: 'You · Sam Aroha',
+    unread: 0,
+    updatedAt: '2026-03-10T11:30:00Z',
+    messages: [
+      {
+        id: 'm5',
+        sender: 'landlord',
+        senderName: 'Sam Aroha',
+        body: 'Hi Māhuta — annual inspection booked for 4 Apr, 10am. 48 hours’ notice as required. Let me know if that time doesn’t work.',
+        sentAt: '2026-03-10T11:30:00Z',
+        read: true,
+      },
+      {
+        id: 'm6',
+        sender: 'tenant',
+        senderName: 'You',
+        body: 'That works for me. See you then.',
+        sentAt: '2026-03-10T12:05:00Z',
+        read: true,
+      },
+    ],
+  },
+]
+
+export const mockTenantNotifications = [
+  {
+    id: 'n1',
+    title: 'Plumber booked',
+    body: 'Wellington Plumbing Co · Thursday AM · dishwasher leak',
+    at: '2026-03-17T08:12:00Z',
+    unread: true,
+  },
+  {
+    id: 'n2',
+    title: 'Rent due Friday',
+    body: '$680 · ref RENT-ORIENTAL-12',
+    at: '2026-03-14T09:00:00Z',
+    unread: false,
+  },
+  {
+    id: 'n3',
+    title: 'Inspection notice',
+    body: '4 Apr 10am · 12 Oriental Parade',
+    at: '2026-03-10T11:30:00Z',
+    unread: false,
   },
 ]

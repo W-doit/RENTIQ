@@ -5,6 +5,7 @@ import {
   ClipboardCheck,
   LayoutDashboard,
   LogOut,
+  MessagesSquare,
   Settings,
   Wrench,
   Wallet,
@@ -18,6 +19,7 @@ const landlordNav = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/properties', label: 'Properties', icon: Building2 },
   { to: '/maintenance', label: 'Maintenance', icon: Wrench },
+  { to: '/messages', label: 'Messages', icon: MessagesSquare },
   { to: '/compliance', label: 'Compliance', icon: ClipboardCheck },
   { to: '/financials', label: 'Financials', icon: Wallet },
 ]
@@ -37,7 +39,7 @@ export function LandlordShell() {
   return (
     <div className="min-h-dvh bg-porcelain flex">
       <aside className="hidden md:flex w-64 shrink-0 flex-col bg-basalt text-basalt-ink sticky top-0 h-dvh">
-        <div className="h-16 px-5 flex items-center border-b border-basalt-hairline">
+        <div className="h-20 px-5 flex items-center border-b border-basalt-hairline">
           <Logo invert />
         </div>
         <nav className="flex-1 p-3 space-y-0.5">
@@ -105,12 +107,12 @@ export function LandlordShell() {
       </aside>
 
       <div className="flex-1 min-w-0 flex flex-col pb-20 md:pb-0">
-        <header className="sticky top-0 z-30 h-16 bg-surface/90 backdrop-blur border-b border-hairline px-4 md:px-8 flex items-center justify-between">
+        <header className="sticky top-0 z-30 h-20 bg-surface/90 backdrop-blur border-b border-hairline px-4 md:px-8 flex items-center justify-between">
           <div className="md:hidden">
             <Logo size="sm" />
           </div>
           <p className="hidden md:block font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-            Sit down · it’s handled
+            Everything in hand
           </p>
           <button
             type="button"

@@ -40,7 +40,7 @@ export function ListingGeneratorPage() {
         <div>
           <h2 className="font-display text-xl font-semibold mb-1">AI listing generator</h2>
           <p className="text-sm text-ink-muted">
-            Fill the basics — Skip drafts Trade Me / realestate.co.nz copy.
+            Fill the basics — Iris drafts Trade Me / realestate.co.nz copy.
           </p>
         </div>
         <div>
