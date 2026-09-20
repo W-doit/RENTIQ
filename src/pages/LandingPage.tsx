@@ -2,19 +2,21 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { Logo } from '../components/brand/Logo'
 import { Button } from '../components/ui/Button'
+import { InstallButton } from '../components/pwa/InstallButton'
 
 export function LandingPage() {
   return (
     <div className="min-h-dvh bg-porcelain">
       <header className="h-20 px-6 md:px-10 flex items-center justify-between border-b border-hairline sticky top-0 z-20 bg-porcelain/90 backdrop-blur">
         <Logo />
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link
             to="/login"
             className="text-sm text-ink-muted hover:text-ink hidden sm:inline no-underline"
           >
             Sign in
           </Link>
+          <InstallButton size="sm" />
           <Link to="/login">
             <Button size="sm">Start 30 days free</Button>
           </Link>
